@@ -10,23 +10,22 @@ from torch.utils.data import DataLoader
 
 def param_lv():    
     params = [
-        {'alpha': 0.5 , 'beta': 0.5, 'gamma': 0.5 , 'delta': 0.5},
-        {'alpha': 0.25, 'beta': 0.5, 'gamma': 0.5 , 'delta': 0.5},
-        {'alpha': 0.75, 'beta': 0.5, 'gamma': 0.5 , 'delta': 0.5},
-        {'alpha': 1.0 , 'beta': 0.5, 'gamma': 0.5 , 'delta': 0.5},
-        {'alpha': 0.5 , 'beta': 0.5, 'gamma': 0.25, 'delta': 0.5},
-        {'alpha': 0.5 , 'beta': 0.5, 'gamma': 0.75, 'delta': 0.5},
-        {'alpha': 0.5 , 'beta': 0.5, 'gamma': 1.0 , 'delta': 0.5},
-        {'alpha': 0.25, 'beta': 0.5, 'gamma': 0.25, 'delta': 0.5},
-        {'alpha': 0.75, 'beta': 0.5, 'gamma': 0.75, 'delta': 0.5},
-        {'alpha': 1.0 , 'beta': 0.5, 'gamma': 1.0 , 'delta': 0.5},
+            {"alpha": 0.5, "beta": 0.5, "gamma": 0.5, "delta": 0.5},
+            {"alpha": 0.5, "beta": 0.75, "gamma": 0.5, "delta": 0.5},
+            {"alpha": 0.5, "beta": 1.0, "gamma": 0.5, "delta": 0.5},
+            {"alpha": 0.5, "beta": 0.5, "gamma": 0.5, "delta": 0.75},
+            {"alpha": 0.5, "beta": 0.5, "gamma": 0.5, "delta": 1.0},
+            {"alpha": 0.5, "beta": 0.75, "gamma": 0.5, "delta": 0.75},
+            {"alpha": 0.5, "beta": 0.75, "gamma": 0.5, "delta": 1.0},
+            {"alpha": 0.5, "beta": 1.0, "gamma": 0.5, "delta": 0.75},
+            {"alpha": 0.5, "beta": 1.0, "gamma": 0.5, "delta": 1.0}
     ]
 
     n_env = len(params)
-    mini_batch_size = 1
+    mini_batch_size = 4
 
     dataset_train_params = {
-        'num_traj_per_env': 1,
+        'num_traj_per_env': 4,
         'time_horizon': 10, 
         'params': params,
         'dt': 0.5, 

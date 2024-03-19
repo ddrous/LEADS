@@ -49,7 +49,7 @@ def train_leads(dataset_name, exp_type, path, device):
         decomp_type = exp_type
 
     if dataset_name == 'lv':
-        n_env = 10
+        n_env = 9
         net = Forecaster(in_c=2, out_c=2, n_env=n_env, hidden=64, net_type='mlp', factor=1., method='rk4', decomp_type=decomp_type)
         init_weights(net, init_type='normal', init_gain=0.05)
         train, test = init_dataloaders('lv')
@@ -80,7 +80,7 @@ def train_leads(dataset_name, exp_type, path, device):
             train=train, test=test, net=net, optimizer=optimizer, 
             min_op='sum_spectral', n_env=n_env, calculate_net_norm=True, 
             k=0.99, lambda_inv=lambda_inv, factor_lip=factor_lip,
-            nupdate=10, nepoch=120000, decomp_type=decomp_type,
+            nupdate=10, nepoch=12, decomp_type=decomp_type,
             path=path, device=device
         )
     experiment.run()
