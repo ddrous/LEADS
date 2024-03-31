@@ -334,6 +334,7 @@ class MultiEnvExperiment(LoopExperiment):
         return metrics
 
     def run(self):
+        print("Calling the run method")
         loss_test_min = None
         for epoch in range(self.nepoch): 
             for iteration, data in enumerate(self.train, 0):
@@ -350,7 +351,9 @@ class MultiEnvExperiment(LoopExperiment):
                         for j, data_test in enumerate(self.test, 0):
                             batch, output, loss, metric = self.val_step(data_test)
                             loss_test.append(loss['loss'].item())
-                            
+                        
+                        print("\nPrint loss test\n:", loss_test)
+
                         loss_test_mean = statistics.mean(loss_test)
                         loss_test_std = statistics.stdev(loss_test)
 

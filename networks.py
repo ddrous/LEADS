@@ -199,6 +199,9 @@ class ConvNetEstimator(nn.Module):
                 Swish(),
                 nn.Conv2d(hidden, out_c, kernel_size=kernel_size, padding=padding, padding_mode='circular'),
             )
+            print("Print all hyperparameters:", in_c, out_c, hidden, factor, net_type)
+            print("Network:", self.res)
+
         elif net_type == 'fno':
             self.res = FNO2d(6, 6, 10)
         else:

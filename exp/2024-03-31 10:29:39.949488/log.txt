@@ -1,0 +1,14 @@
+train_leads.py gs
+Calling the run method
+[1][1/12][1/1] | loss: 8.915e-02 | loss_train: 1.062e-02 | loss_e0: 9.278e-02 | loss_e1: 4.507e-02 | loss_e2: 1.296e-01
+[2][2/12][1/1] | loss: 8.723e-02 | loss_train: 1.057e-02 | loss_e0: 9.028e-02 | loss_e1: 4.455e-02 | loss_e2: 1.269e-01
+[3][3/12][1/1] | loss: 8.536e-02 | loss_train: 1.053e-02 | loss_e0: 8.782e-02 | loss_e1: 4.408e-02 | loss_e2: 1.242e-01
+[4][4/12][1/1] | loss: 8.345e-02 | loss_train: 1.049e-02 | loss_e0: 8.531e-02 | loss_e1: 4.365e-02 | loss_e2: 1.214e-01
+[5][5/12][1/1] | loss: 8.145e-02 | loss_train: 1.057e-02 | loss_e0: 8.267e-02 | loss_e1: 4.328e-02 | loss_e2: 1.184e-01
+[6][6/12][1/1] | loss: 7.933e-02 | loss_train: 1.039e-02 | loss_e0: 7.986e-02 | loss_e1: 4.297e-02 | loss_e2: 1.152e-01
+[7][7/12][1/1] | loss: 7.705e-02 | loss_train: 1.040e-02 | loss_e0: 7.686e-02 | loss_e1: 4.272e-02 | loss_e2: 1.116e-01
+[8][8/12][1/1] | loss: 7.464e-02 | loss_train: 1.028e-02 | loss_e0: 7.370e-02 | loss_e1: 4.255e-02 | loss_e2: 1.077e-01
+[9][9/12][1/1] | loss: 7.207e-02 | loss_train: 1.022e-02 | loss_e0: 7.037e-02 | loss_e1: 4.248e-02 | loss_e2: 1.034e-01
+[10][10/12][1/1] | loss: 6.938e-02 | loss_train: 1.016e-02 | loss_e0: 6.693e-02 | loss_e1: 4.252e-02 | loss_e2: 9.870e-02
+[11][11/12][1/1] | loss: 6.659e-02 | loss_train: 1.009e-02 | loss_e0: 6.343e-02 | loss_e1: 4.268e-02 | loss_e2: 9.366e-02
+[12][12/12][1/1] | loss: 6.374e-02 | loss_train: 1.002e-02 | loss_e0: 5.996e-02 | loss_e1: 4.297e-02 | loss_e2: 8.830e-02

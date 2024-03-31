@@ -58,7 +58,7 @@ def train_leads(dataset_name, exp_type, path, device):
         factor_lip = 1.e-2
     elif dataset_name == 'gs':
         n_env = 3
-        net = Forecaster(in_c=2, out_c=2, n_env=n_env, hidden=64, net_type='conv', factor=1.e-3, method='rk4', decomp_type=decomp_type)
+        net = Forecaster(in_c=2, out_c=2, n_env=n_env, hidden=12, net_type='conv', factor=1.e-3, method='rk4', decomp_type=decomp_type)
         init_weights(net, init_type='normal', init_gain=0.1)
         train, test = init_dataloaders('gs')
         optimizer = optim.Adam(net.parameters(), lr=1.e-3, betas=(0.9, 0.999))
@@ -80,7 +80,7 @@ def train_leads(dataset_name, exp_type, path, device):
             train=train, test=test, net=net, optimizer=optimizer, 
             min_op='sum_spectral', n_env=n_env, calculate_net_norm=True, 
             k=0.99, lambda_inv=lambda_inv, factor_lip=factor_lip,
-            nupdate=10, nepoch=12, decomp_type=decomp_type,
+            nupdate=10, nepoch=4000, decomp_type=decomp_type,
             path=path, device=device
         )
     experiment.run()

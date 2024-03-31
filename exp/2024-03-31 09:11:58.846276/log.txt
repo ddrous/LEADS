@@ -1,0 +1,13 @@
+train_leads.py gs
+[1][1/12][1/1] | loss: 9.955e-02 | loss_train: 1.076e-02 | loss_e0: 7.384e-02 | loss_e1: 4.640e-02 | loss_e2: 1.784e-01
+[2][2/12][1/1] | loss: 5.704e-02 | loss_train: 9.875e-03 | loss_e0: 4.854e-02 | loss_e1: 6.973e-02 | loss_e2: 5.286e-02
+[3][3/12][1/1] | loss: 4.768e-02 | loss_train: 9.505e-03 | loss_e0: 4.500e-02 | loss_e1: 6.028e-02 | loss_e2: 3.775e-02
+[4][4/12][1/1] | loss: 3.988e-02 | loss_train: 9.075e-03 | loss_e0: 4.224e-02 | loss_e1: 4.275e-02 | loss_e2: 3.465e-02
+[5][5/12][1/1] | loss: 3.686e-02 | loss_train: 9.048e-03 | loss_e0: 3.861e-02 | loss_e1: 3.919e-02 | loss_e2: 3.279e-02
+[6][6/12][1/1] | loss: 4.136e-02 | loss_train: 8.951e-03 | loss_e0: 3.641e-02 | loss_e1: 5.671e-02 | loss_e2: 3.095e-02
+[7][7/12][1/1] | loss: 4.243e-02 | loss_train: 8.990e-03 | loss_e0: 3.621e-02 | loss_e1: 6.170e-02 | loss_e2: 2.937e-02
+[8][8/12][1/1] | loss: 3.808e-02 | loss_train: 8.760e-03 | loss_e0: 3.615e-02 | loss_e1: 5.000e-02 | loss_e2: 2.809e-02
+[9][9/12][1/1] | loss: 3.344e-02 | loss_train: 8.624e-03 | loss_e0: 3.499e-02 | loss_e1: 3.793e-02 | loss_e2: 2.741e-02
+[10][10/12][1/1] | loss: 3.116e-02 | loss_train: 8.547e-03 | loss_e0: 3.334e-02 | loss_e1: 3.285e-02 | loss_e2: 2.729e-02
+[11][11/12][1/1] | loss: 3.094e-02 | loss_train: 8.521e-03 | loss_e0: 3.214e-02 | loss_e1: 3.335e-02 | loss_e2: 2.731e-02
+[12][12/12][1/1] | loss: 3.135e-02 | loss_train: 8.506e-03 | loss_e0: 3.157e-02 | loss_e1: 3.550e-02 | loss_e2: 2.697e-02
