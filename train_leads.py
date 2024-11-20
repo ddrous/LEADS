@@ -56,11 +56,28 @@ def train_leads(dataset_name, exp_type, path, device):
         optimizer = optim.Adam(net.parameters(), lr=1.e-3, betas=(0.9, 0.999))
         lambda_inv = 1 / 5e3
         factor_lip = 1.e-2
+    elif dataset_name == 'sm':
+        # n_env = 21
+        n_env = 6
+        net = Forecaster(in_c=2, out_c=2, n_env=n_env, hidden=157, net_type='mlp', factor=1., method='rk4', decomp_type=decomp_type)
+        init_weights(net, init_type='normal', init_gain=0.05)
+        train, test = init_dataloaders('sm')
+        optimizer = optim.Adam(net.parameters(), lr=1.e-3, betas=(0.9, 0.999))
+        lambda_inv = 1 / 5e3
+        factor_lip = 1.e-2
     elif dataset_name == 'gs':
         n_env = 3
         net = Forecaster(in_c=2, out_c=2, n_env=n_env, hidden=12, net_type='conv', factor=1.e-3, method='rk4', decomp_type=decomp_type)
         init_weights(net, init_type='normal', init_gain=0.1)
         train, test = init_dataloaders('gs')
+        optimizer = optim.Adam(net.parameters(), lr=1.e-3, betas=(0.9, 0.999))
+        lambda_inv = 1 / 1e3
+        factor_lip = 1.e-2
+    elif dataset_name == 'bt':
+        n_env = 9
+        net = Forecaster(in_c=2, out_c=2, n_env=n_env, hidden=80, net_type='conv', factor=1.e-3, method='rk4', decomp_type=decomp_type)
+        init_weights(net, init_type='normal', init_gain=0.1)
+        train, test = init_dataloaders('bt')
         optimizer = optim.Adam(net.parameters(), lr=1.e-3, betas=(0.9, 0.999))
         lambda_inv = 1 / 1e3
         factor_lip = 1.e-2
@@ -72,15 +89,19 @@ def train_leads(dataset_name, exp_type, path, device):
         optimizer = optim.Adam(net.parameters(), lr=1.e-3, betas=(0.9, 0.999))
         lambda_inv = 1 / 1e5
         factor_lip = 1.e-4
-    
+
     if exp_type == 'leads_no_min':
         lambda_inv = 0.
+
+    ## Count the number of leanable parameters in the forecaster
+    n_params = sum(p.numel() for p in net.left_model.parameters() if p.requires_grad)
+    print(f'Number of learnable parameters: {n_params}')
 
     experiment = MultiEnvExperiment(
             train=train, test=test, net=net, optimizer=optimizer, 
             min_op='sum_spectral', n_env=n_env, calculate_net_norm=True, 
             k=0.99, lambda_inv=lambda_inv, factor_lip=factor_lip,
-            nupdate=10, nepoch=4000, decomp_type=decomp_type,
+            nupdate=10, nepoch=2000, decomp_type=decomp_type,
             path=path, device=device
         )
     experiment.run()

@@ -158,7 +158,7 @@ class LoopExperiment(BaseExperiment):
         )
         for name, value in metrics.items():
             message += ' | {name}: {value:.3e}'.format(name=name, value=value)
-            
+
         print(message)
 
     def step(self, **kwargs):

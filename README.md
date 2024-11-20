@@ -15,7 +15,7 @@ pip3 install --user -U -r requirements.txt
 Use the following command to run the experiments for LV, GS and NS datasets,
 
 ```bash
-python3 train_leads.py {lv,gs,ns}
+python3 train_leads.py {lv,sm,gs,bt,ns}
 ```
 
 The experiments are saved into `./exp` by default. You can specify your own experiment directory with `--path /path/to/exp`.
